@@ -1,12 +1,16 @@
-# import required module
 import os
-# assign directory
 directory = os.getcwd()
-
-# iterate over files in
-# that directory
 for filename in os.listdir(directory):
-	f = os.path.join(directory, filename)
-	# checking if it is a file and its empty
-	if os.path.isfile(f) and os.stat(f).st_size == 0:
-		os.remove(f)
+    f = os.path.join(directory, filename)
+
+#checking for file and also id the file is empty
+
+    if os.path.isfile(f) and os.stat(f).st_size == 0:
+        print("deleting the empty file: ", f)
+
+#removing the files if found.
+
+        os.remove(f)
+        break
+    else:
+        print("no empty files are there.")
